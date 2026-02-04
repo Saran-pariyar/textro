@@ -295,3 +295,23 @@ const modalCopyBtn = document.querySelector("#modal-copy-btn");
 modalCopyBtn.addEventListener("click", () => {
     navigator.clipboard.writeText(normalInput.innerText)
 })
+
+// Modal Theme Toggle
+const modalThemeBtn = document.querySelector("#modal-theme-btn");
+
+// Set default to dark mode to match input
+resultTextarea.classList.add("dark-mode");
+
+modalThemeBtn.addEventListener("click", () => {
+    resultTextarea.classList.toggle("dark-mode");
+
+    // Update icon
+    const icon = modalThemeBtn.querySelector("i");
+    if (resultTextarea.classList.contains("dark-mode")) {
+        icon.classList.remove("fa-sun");
+        icon.classList.add("fa-moon");
+    } else {
+        icon.classList.remove("fa-moon");
+        icon.classList.add("fa-sun");
+    }
+});
