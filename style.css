@@ -352,7 +352,7 @@ nav {
   /* overflow-y: scroll; */
   width: 90vw;
   max-width: 90vw;
-  background-color: #b1f1fa;
+  background-color: #f5f9fa;
 
   display: inline-block;
   /* color: var(--text-white); */
@@ -381,8 +381,13 @@ nav {
   border: 2px solid var(--text-white);
 }
 
-.yellow-bold {
-  color: #fca311;
+.highlight-bold {
+  color: #4169e1; /* Royal Blue for Light Mode */
+  font-weight: 700;
+}
+
+.result-section.dark-mode .highlight-bold {
+  color: #72a0ff; /* Brighter blue for Dark Mode contrast */
 }
 
 .result-section.dark-mode {

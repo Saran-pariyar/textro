@@ -181,7 +181,7 @@ btnBoldWithLineBreak.addEventListener("click", () => {
 
 const btnColorizeBold = document.querySelector("#btn-colorize-bold");
 btnColorizeBold.addEventListener("click", () => {
-    normalInput.innerHTML = boldRandomLettersFunction(normalInput.innerText, "yellow-bold");
+    normalInput.innerHTML = boldRandomLettersFunction(normalInput.innerText, "highlight-bold");
 });
 
 const btnColorizeBoldLineBreak = document.querySelector("#btn-colorize-bold-line-break");
@@ -190,7 +190,7 @@ btnColorizeBoldLineBreak.addEventListener("click", () => {
     const sentences = text.match(/[^.!?]+[.!?]*\s*/g) || [text];
 
     const resultHTML = sentences.map(sentence => {
-        const bolded = boldRandomLettersFunction(sentence.trim(), "yellow-bold");
+        const bolded = boldRandomLettersFunction(sentence.trim(), "highlight-bold");
         return `<div style="margin-bottom: 1rem;">${bolded}</div>`;
     }).join('');
 
