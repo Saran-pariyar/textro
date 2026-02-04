@@ -121,7 +121,6 @@ nav {
   font-weight: 700;
   letter-spacing: 0.5px;
   transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-  box-shadow: 0 4px 15px rgba(219, 39, 119, 0.4);
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
@@ -130,13 +129,11 @@ nav {
 }
 
 .pink-btn:hover {
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 8px 25px rgba(219, 39, 119, 0.6);
   background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
 }
 
 .pink-btn:active {
-  transform: translateY(-1px) scale(0.98);
+  background: #db2777;
 }
 
 /* Text Format Section  */
@@ -240,18 +237,15 @@ nav {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border: 2px solid var(--btn-gray-bg);
   font-weight: 500;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
 .clear-btn:hover {
   background-color: transparent;
   cursor: pointer;
-  transform: translateY(-2px);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
 }
 
 .clear-btn:active {
-  transform: scale(0.96);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .fa-solid {
@@ -297,15 +291,12 @@ nav {
 
 .format-btn {
   background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   color: #e5e7eb;
   padding: 0.7rem 1.4rem;
   font-weight: 500;
   border-radius: 12px;
   transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -313,15 +304,13 @@ nav {
 
 .format-btn:hover {
   background: rgba(219, 39, 119, 0.15);
-  border: 1px solid rgba(219, 39, 119, 0.3);
+  border: 1px solid rgba(219, 39, 119, 0.5);
   color: #ffffff;
   cursor: pointer;
-  transform: translateY(-4px);
-  box-shadow: 0 10px 20px rgba(219, 39, 119, 0.2);
 }
 
 .format-btn:active {
-  transform: translateY(-1px) scale(0.97);
+  background: rgba(219, 39, 119, 0.25);
 }
 
 /* ADVANCED OPTION  */
@@ -400,14 +389,16 @@ nav {
 }
 
 .modal-btn {
-  font-weight: 500;
-  margin-right: 0.5rem;
+  font-weight: 600;
   display: inline-block;
+  border: none;
+  margin: 0;
 }
 
 .modal-btn:hover {
   color: var(--text-white);
-  border: 2px solid var(--text-white);
+  filter: brightness(1.1);
+  /* No border or transform here to prevent any layout movement */
 }
 
 .highlight-bold {
