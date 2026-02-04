@@ -106,7 +106,7 @@ function formatText(action) {
 
 }
 
-function boldRandomLettersFunction(str) {
+function boldRandomLettersFunction(str, className = "") {
     const words = str.split(/\s+/);
 
     function getRandomIndexes(length, count) {
@@ -126,7 +126,7 @@ function boldRandomLettersFunction(str) {
         let newWord = '';
         for (let i = 0; i < word.length; i++) {
             if (indexesToBold.includes(i)) {
-                newWord += `<b>${word[i]}</b>`;
+                newWord += `<b class="${className}">${word[i]}</b>`;
             } else {
                 newWord += word[i];
             }
@@ -169,43 +169,28 @@ const btnBoldWithLineBreak = document.querySelector(".bold-with-line-break");
 
 btnBoldWithLineBreak.addEventListener("click", () => {
     const text = normalInput.innerText;
-
-
     const sentences = text.match(/[^.!?]+[.!?]*\s*/g) || [text];
 
-    // bold 
-    function boldRandomLetters(str) {
-        const words = str.split(/\s+/);
+    const resultHTML = sentences.map(sentence => {
+        const bolded = boldRandomLettersFunction(sentence.trim());
+        return `<div style="margin-bottom: 1rem;">${bolded}</div>`;
+    }).join('');
 
-        function getRandomIndexes(length, count) {
-            const indexes = new Set();
-            while (indexes.size < count) {
-                indexes.add(Math.floor(Math.random() * length));
-            }
-            return Array.from(indexes);
-        }
+    normalInput.innerHTML = resultHTML;
+});
 
-        return words.map(word => {
-            if (word.length <= 2) return word;
+const btnColorizeBold = document.querySelector("#btn-colorize-bold");
+btnColorizeBold.addEventListener("click", () => {
+    normalInput.innerHTML = boldRandomLettersFunction(normalInput.innerText, "yellow-bold");
+});
 
-            const boldCount = word.length >= 5 ? 3 : 2;
-            const indexesToBold = getRandomIndexes(word.length, boldCount);
-
-            let newWord = '';
-            for (let i = 0; i < word.length; i++) {
-                if (indexesToBold.includes(i)) {
-                    newWord += `<b>${word[i]}</b>`;
-                } else {
-                    newWord += word[i];
-                }
-            }
-            return newWord;
-        }).join(' ');
-    }
-
+const btnColorizeBoldLineBreak = document.querySelector("#btn-colorize-bold-line-break");
+btnColorizeBoldLineBreak.addEventListener("click", () => {
+    const text = normalInput.innerText;
+    const sentences = text.match(/[^.!?]+[.!?]*\s*/g) || [text];
 
     const resultHTML = sentences.map(sentence => {
-        const bolded = boldRandomLetters(sentence.trim());
+        const bolded = boldRandomLettersFunction(sentence.trim(), "yellow-bold");
         return `<div style="margin-bottom: 1rem;">${bolded}</div>`;
     }).join('');
 
@@ -213,7 +198,7 @@ btnBoldWithLineBreak.addEventListener("click", () => {
 });
 
 const removeNumbers = document.querySelector("#btn-remove-numbers")
-removeNumbers.addEventListener("click", ()=>{
+removeNumbers.addEventListener("click", () => {
     formatText("removeNumbers")
 })
 

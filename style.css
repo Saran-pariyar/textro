@@ -380,3 +380,7 @@ nav {
   color: var(--text-white);
   border: 2px solid var(--text-white);
 }
+
+.yellow-bold {
+  color: #fca311;
+}
