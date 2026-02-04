@@ -352,6 +352,7 @@ nav {
   /* overflow-y: scroll; */
   width: 90vw;
   max-width: 90vw;
+  background-color: #b1f1fa;
 
   display: inline-block;
   /* color: var(--text-white); */
