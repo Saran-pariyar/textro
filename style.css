@@ -114,18 +114,31 @@ nav {
 
 .pink-btn {
   border: 2px solid var(--btn-pink-bg);
-  border-radius: 10px;
+  border-radius: 12px;
   color: var(--text-white);
-  padding: 0.5rem 1rem;
+  padding: 0.6rem 1.4rem;
   background-color: var(--btn-pink-bg);
-  transition: 0.3s all;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: inline-block;
+  font-weight: 600;
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  text-decoration: none;
 }
 
 .pink-btn:hover {
   background-color: transparent;
   color: var(--btn-pink-bg);
   cursor: pointer;
+  transform: translateY(-2px);
+  box-shadow:
+    0 10px 15px -3px rgba(219, 39, 119, 0.3),
+    0 4px 6px -2px rgba(219, 39, 119, 0.1);
+}
+
+.pink-btn:active {
+  transform: translateY(0) scale(0.96);
 }
 
 /* Text Format Section  */
@@ -222,17 +235,25 @@ nav {
 }
 
 .clear-btn {
-  padding: 0.5rem 1rem;
-  border-radius: 10px;
+  padding: 0.6rem 1.4rem;
+  border-radius: 12px;
   background-color: var(--btn-gray-bg);
   color: var(--text-white);
-  transform: 0.3s all;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border: 2px solid var(--btn-gray-bg);
+  font-weight: 500;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
 .clear-btn:hover {
   background-color: transparent;
   cursor: pointer;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+}
+
+.clear-btn:active {
+  transform: scale(0.96);
 }
 
 .fa-solid {
@@ -279,20 +300,27 @@ nav {
 .format-btn {
   border: 2px solid var(--text-white);
   color: var(--text-white);
-
   background-color: transparent;
-
-  padding: 0.5rem 1rem;
+  padding: 0.6rem 1.2rem;
   font-weight: 500;
-  border-radius: 10px;
-  transition: 0.3s all;
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 }
 
 .format-btn:hover {
   border: 2px solid var(--btn-pink-bg);
   color: var(--btn-pink-bg);
-  background-color: var(--main-dark-blue-bg);
+  background-color: rgba(219, 39, 119, 0.05);
   cursor: pointer;
+  transform: translateY(-2px);
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.format-btn:active {
+  transform: scale(0.96);
 }
 
 /* ADVANCED OPTION  */
